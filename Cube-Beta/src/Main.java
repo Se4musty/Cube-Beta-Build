@@ -1,11 +1,7 @@
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args){
-        if (Testing.test() == 0){
-            cout("Tests Passed Successfully!");
-        }
-        else
-            cout("Test Failure :(");
+        Testing.test();
     }
 
     public static void Display_labelings(){

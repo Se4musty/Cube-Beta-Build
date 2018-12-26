@@ -578,45 +578,118 @@ public class Cube {
         return display_Cube;
     }
 
-    public void move_upper_face_clock(){
+    public void move_upper_face_clock() {
         // Rotate upper face clock
         get_Upper_Face().rotate_Face_Clock();
 
         // First save original row...
         char[] focal_top_backup = new char[3];
-        focal_top_backup[0] = get_Focal_Face().get_Block_Color(0 ,0);
-        focal_top_backup[1] = get_Focal_Face().get_Block_Color(0 ,1);
-        focal_top_backup[2] = get_Focal_Face().get_Block_Color(0 ,2);
+        focal_top_backup[0] = get_Focal_Face().get_Block_Color(0, 0);
+        focal_top_backup[1] = get_Focal_Face().get_Block_Color(0, 1);
+        focal_top_backup[2] = get_Focal_Face().get_Block_Color(0, 2);
 
-        get_Focal_Face().set_Block_Color(0,0, get_Right_Face().get_Block_Color(0,0));
-        get_Focal_Face().set_Block_Color(0,1, get_Right_Face().get_Block_Color(0,1));
-        get_Focal_Face().set_Block_Color(0,2, get_Right_Face().get_Block_Color(0,2));
+        get_Focal_Face().set_Block_Color(0, 0, get_Right_Face().get_Block_Color(0, 0));
+        get_Focal_Face().set_Block_Color(0, 1, get_Right_Face().get_Block_Color(0, 1));
+        get_Focal_Face().set_Block_Color(0, 2, get_Right_Face().get_Block_Color(0, 2));
 
-        get_Right_Face().set_Block_Color(0,0, get_Back_Face().get_Block_Color(0,0));
-        get_Right_Face().set_Block_Color(0,1, get_Back_Face().get_Block_Color(0,1));
-        get_Right_Face().set_Block_Color(0,2, get_Back_Face().get_Block_Color(0,2));
+        get_Right_Face().set_Block_Color(0, 0, get_Back_Face().get_Block_Color(0, 0));
+        get_Right_Face().set_Block_Color(0, 1, get_Back_Face().get_Block_Color(0, 1));
+        get_Right_Face().set_Block_Color(0, 2, get_Back_Face().get_Block_Color(0, 2));
 
-        get_Back_Face().set_Block_Color(0,0, get_Left_Face().get_Block_Color(0,0));
-        get_Back_Face().set_Block_Color(0,1, get_Left_Face().get_Block_Color(0,1));
-        get_Back_Face().set_Block_Color(0,2, get_Left_Face().get_Block_Color(0,2));
+        get_Back_Face().set_Block_Color(0, 0, get_Left_Face().get_Block_Color(0, 0));
+        get_Back_Face().set_Block_Color(0, 1, get_Left_Face().get_Block_Color(0, 1));
+        get_Back_Face().set_Block_Color(0, 2, get_Left_Face().get_Block_Color(0, 2));
 
-        get_Left_Face().set_Block_Color(0,0, focal_top_backup[0]);
-        get_Left_Face().set_Block_Color(0,1, focal_top_backup[1]);
-        get_Left_Face().set_Block_Color(0,2, focal_top_backup[2]);
-    } // DONE!! :)
-    /*
+        get_Left_Face().set_Block_Color(0, 0, focal_top_backup[0]);
+        get_Left_Face().set_Block_Color(0, 1, focal_top_backup[1]);
+        get_Left_Face().set_Block_Color(0, 2, focal_top_backup[2]);
+    }
+
     public void move_upper_face_cclock(){
+        // Rotate upper face counter clock
+        get_Upper_Face().rotate_Face_CounterClock();
 
+        // First save original row...
+        char[] focal_top_backup = new char[3];
+        focal_top_backup[0] = get_Focal_Face().get_Block_Color(0, 0);
+        focal_top_backup[1] = get_Focal_Face().get_Block_Color(0, 1);
+        focal_top_backup[2] = get_Focal_Face().get_Block_Color(0, 2);
+
+        get_Focal_Face().set_Block_Color(0, 0, get_Left_Face().get_Block_Color(0, 0));
+        get_Focal_Face().set_Block_Color(0, 1, get_Left_Face().get_Block_Color(0, 1));
+        get_Focal_Face().set_Block_Color(0, 2, get_Left_Face().get_Block_Color(0, 2));
+
+        get_Left_Face().set_Block_Color(0, 0, get_Back_Face().get_Block_Color(0, 0));
+        get_Left_Face().set_Block_Color(0, 1, get_Back_Face().get_Block_Color(0, 1));
+        get_Left_Face().set_Block_Color(0, 2, get_Back_Face().get_Block_Color(0, 2));
+
+        get_Back_Face().set_Block_Color(0, 0, get_Right_Face().get_Block_Color(0, 0));
+        get_Back_Face().set_Block_Color(0, 1, get_Right_Face().get_Block_Color(0, 1));
+        get_Back_Face().set_Block_Color(0, 2, get_Right_Face().get_Block_Color(0, 2));
+
+        get_Right_Face().set_Block_Color(0, 0, focal_top_backup[0]);
+        get_Right_Face().set_Block_Color(0, 1, focal_top_backup[1]);
+        get_Right_Face().set_Block_Color(0, 2, focal_top_backup[2]);
     }
+
     public void move_left_face_clock(){
+        // Rotate left face clock
+        get_Left_Face().rotate_Face_Clock();
 
+        // First save focal col. backup...
+        char[] focal_col_backup = new char[3];
+        focal_col_backup[0] = get_Focal_Face().get_Block_Color(0, 0);
+        focal_col_backup[1] = get_Focal_Face().get_Block_Color(1, 0);
+        focal_col_backup[2] = get_Focal_Face().get_Block_Color(2, 0);
+
+        get_Focal_Face().set_Block_Color(0, 0, get_Upper_Face().get_Block_Color(0, 0));
+        get_Focal_Face().set_Block_Color(1, 0, get_Upper_Face().get_Block_Color(1, 0));
+        get_Focal_Face().set_Block_Color(2, 0, get_Upper_Face().get_Block_Color(2, 0));
+
+        get_Upper_Face().set_Block_Color(0, 0, get_Back_Face().get_Block_Color(2, 2));
+        get_Upper_Face().set_Block_Color(1, 0, get_Back_Face().get_Block_Color(1, 2));
+        get_Upper_Face().set_Block_Color(2, 0, get_Back_Face().get_Block_Color(0, 2));
+
+        get_Back_Face().set_Block_Color(0, 2, get_Bottom_Face().get_Block_Color(0, 2));
+        get_Back_Face().set_Block_Color(1, 2, get_Bottom_Face().get_Block_Color(0, 1));
+        get_Back_Face().set_Block_Color(2, 2, get_Bottom_Face().get_Block_Color(0, 0));
+
+        get_Bottom_Face().set_Block_Color(0, 0, focal_col_backup[0]);
+        get_Bottom_Face().set_Block_Color(1, 0, focal_col_backup[1]);
+        get_Bottom_Face().set_Block_Color(2, 0, focal_col_backup[2]);
     }
+
     public void move_left_face_cclock(){
+        // Rotate left face counter clock
+        get_Left_Face().rotate_Face_CounterClock();
 
+        // First save focal col. backup...
+        char[] focal_col_backup = new char[3];
+        focal_col_backup[0] = get_Focal_Face().get_Block_Color(0, 0);
+        focal_col_backup[1] = get_Focal_Face().get_Block_Color(1, 0);
+        focal_col_backup[2] = get_Focal_Face().get_Block_Color(2, 0);
+
+        get_Focal_Face().set_Block_Color(0, 0, get_Bottom_Face().get_Block_Color(0, 0));
+        get_Focal_Face().set_Block_Color(1, 0, get_Bottom_Face().get_Block_Color(1, 0));
+        get_Focal_Face().set_Block_Color(2, 0, get_Bottom_Face().get_Block_Color(2, 0));
+
+        get_Bottom_Face().set_Block_Color(0, 0, get_Back_Face().get_Block_Color(2, 2));
+        get_Bottom_Face().set_Block_Color(1, 0, get_Back_Face().get_Block_Color(1, 2));
+        get_Bottom_Face().set_Block_Color(2, 0, get_Back_Face().get_Block_Color(0, 2));
+
+        get_Back_Face().set_Block_Color(0, 2, get_Upper_Face().get_Block_Color(2, 0));
+        get_Back_Face().set_Block_Color(1, 2, get_Upper_Face().get_Block_Color(1, 0));
+        get_Back_Face().set_Block_Color(2, 2, get_Upper_Face().get_Block_Color(0, 0));
+
+        get_Upper_Face().set_Block_Color(0, 0, focal_col_backup[0]);
+        get_Upper_Face().set_Block_Color(1, 0, focal_col_backup[1]);
+        get_Upper_Face().set_Block_Color(2, 0, focal_col_backup[2]);
     }
+
     public void move_right_face_clock(){
 
     }
+    /*
     public void move_right_face_cclock(){
 
     }
