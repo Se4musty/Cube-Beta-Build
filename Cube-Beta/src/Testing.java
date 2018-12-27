@@ -28,14 +28,19 @@ public class Testing {
 
         /* NEW FEATURE TESTING */
         Cube rubix = new Cube();
-        rubix.get_Left_Face().set_Block_Color(0,2,'w');
+        rubix.get_Back_Face().set_Block_Color(0,2,'r');
         //rubix.get_Bottom_Face().set_Block_Color(0,2,'r');
         Main.Display_Cube(rubix);
+        //rubix.move_front_face_clock(); WORKS!
+        //rubix.move_front_face_cclock(); WORKS!
         //rubix.move_upper_face_clock(); WORKS!
         //rubix.move_upper_face_cclock(); WORKS!
-        //rubix.move_left_face_clock();  WORKS!
+        //rubix.move_left_face_clock(); WORKS!
         //rubix.move_left_face_cclock(); WORKS!
-
+        //rubix.move_right_face_clock(); WORKS!
+        //rubix.move_right_face_cclock(); WORKS!
+        //rubix.move_back_face_clock(); WORKS!
+        
 
         // ROTATE CUBE?
         // rubix.rotate_Cube('l', 1); WORKS!
