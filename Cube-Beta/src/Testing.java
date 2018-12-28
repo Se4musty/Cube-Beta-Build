@@ -28,8 +28,9 @@ public class Testing {
 
         /* NEW FEATURE TESTING */
         Cube rubix = new Cube();
-        rubix.get_Back_Face().set_Block_Color(0,2,'r');
-        //rubix.get_Bottom_Face().set_Block_Color(0,2,'r');
+        //rubix.get_Upper_Face().set_Block_Color(0,1,'r');
+        //rubix.get_Bottom_Face().set_Block_Color(0,1,'r');
+        //rubix.get_Back_Face().set_Block_Color(0,1,'r');
         Main.Display_Cube(rubix);
         //rubix.move_front_face_clock(); WORKS!
         //rubix.move_front_face_cclock(); WORKS!
@@ -40,7 +41,13 @@ public class Testing {
         //rubix.move_right_face_clock(); WORKS!
         //rubix.move_right_face_cclock(); WORKS!
         //rubix.move_back_face_clock(); WORKS!
-        
+        //rubix.move_back_face_cclock(); WORKS!
+        //rubix.move_bottom_face_clock(); WORKS!
+        //rubix.move_bottom_face_cclock(); WORKS!
+        //rubix.move_vertical_Layer_Up(); //WORKS!
+        //rubix.move_vertical_Layer_Down(); //WORKS!
+        //rubix.move_horizontal_Layer_Right(); WORKS!
+        //rubix.move_horizontal_Layer_Left(); WORKS!
 
         // ROTATE CUBE?
         // rubix.rotate_Cube('l', 1); WORKS!
